@@ -1,0 +1,140 @@
+* {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+}
+* a {
+  color: inherit;
+}
+* button {
+  border: 0;
+}
+
+/* ======================================================================= */
+.container {
+  width: 1440px;
+  padding: 10px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+main {
+  color: #373737;
+  font-family: sans-serif;
+}
+
+section:nth-child(odd) {
+  background-color: #fff7f4;
+}
+
+/* =======COMMON================================================================ */
+.text {
+  font-size: 16px;
+  color: #7b7b7b;
+  font-weight: 400;
+  line-height: 24px;
+}
+
+.title {
+  font-weight: 600;
+  line-height: 59px;
+  width: fit-content;
+  margin-bottom: 30px;
+  font-size: 39.0625px;
+}
+
+.subtitle {
+  font-size: 16px;
+  color: #ff5300;
+  font-weight: 400;
+  line-height: 24px;
+  position: relative;
+  width: fit-content;
+  margin-bottom: 8px;
+}
+.subtitle::before, .subtitle::after {
+  content: "";
+  top: 18px;
+  height: 1px;
+  width: 40px;
+  position: absolute;
+  background-color: #ff5300;
+}
+.subtitle::before {
+  left: -50px;
+}
+.subtitle::after {
+  right: -50px;
+}
+
+.header {
+  padding: 30px 0;
+  margin-bottom: 120px;
+  background-color: #fff7f4;
+}
+.header__logo {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+.header > div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.header > div h1 {
+  line-height: 46px;
+  font-size: 39.06px;
+}
+.header > div img {
+  width: 100px;
+}
+.header > div nav {
+  align-items: center;
+}
+.header > div nav a {
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 30px;
+}
+.header > div nav > *:not(:last-child) {
+  margin-right: 30px;
+}
+
+.applications__item {
+  width: fit-content;
+  margin: 0 auto;
+}
+.applications .applications__title {
+  margin: 0 auto;
+  width: fit-content;
+}
+
+footer {
+  padding: 30px 0;
+  background-color: #fff7f4;
+}
+footer .button {
+  margin-top: 30px;
+  width: fit-content;
+}
+footer a {
+  height: 50px;
+  cursor: pointer;
+  font-size: 20px;
+  font-weight: 500;
+  color: #ffffff;
+  line-height: 30px;
+  padding: 10px 22px;
+  border-radius: 5px;
+  background: #ff5300;
+}
+footer .container {
+  display: flex;
+  justify-content: space-between;
+}
+footer .footer__logo img {
+  width: 100px;
+}
+
+/*# sourceMappingURL=stuff.css.map */

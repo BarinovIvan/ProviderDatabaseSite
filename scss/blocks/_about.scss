@@ -1,0 +1,52 @@
+.about {
+
+	padding: 120px 0;
+
+	.container{
+		display: flex;
+		justify-content: space-between;
+
+		img{
+			width: 620px;
+			height: 380px;
+			margin: auto 0;
+		}
+	}
+
+	.title{
+		font-size: 30px;
+	}
+
+	&__text {
+		width: 720px;
+		margin-left: 15px;
+	}
+
+	ul {
+		list-style-type: none;
+
+		li {
+			position: relative;
+			font-size: 20px;
+			font-weight: 400;
+			padding: 0 38px 0;
+			line-height: 24px;
+			margin-bottom: 15px;
+
+			&:before {
+				position: absolute;
+				top: 0;
+				left: -5px;
+				content: url(../../assets/images/about/checkbox-circle-fill.png);
+			}
+		}
+	}
+
+	.text {
+		margin-bottom: 30px;
+	}
+
+	.subtitle:before {
+		display: none;
+	}
+}

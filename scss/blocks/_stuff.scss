@@ -1,0 +1,48 @@
+.stuff {
+
+	padding: 120px 0;
+
+	.container{
+		display: flex;
+		align-items: center;
+		flex-direction: column;
+	}
+
+	&__list{
+		display: grid;
+		gap: 30px;
+		grid-template-columns: repeat(3, 1fr);
+
+	}
+
+	&__item {
+		width: 300px;
+		display: flex;
+		padding: 25px 30px;
+		align-items: center;
+		border-radius: 10px;
+		background: #ffffff;
+		flex-direction: column;
+		justify-content: center;
+		box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.1);
+	}
+
+	img {
+		width: 240px;
+		height: 240px;
+		border-radius: 10px;
+		margin-bottom: 30px;
+	}
+
+	h3{
+		margin-bottom: 30px;
+	}
+
+	.text{
+		margin-bottom: 15px;
+	}
+
+	p{
+		text-align: center;
+	}
+}

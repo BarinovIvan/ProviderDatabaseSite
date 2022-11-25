@@ -1,0 +1,96 @@
+.contact-us {
+	padding: 120px 0;
+
+	.container > div {
+		display: flex;
+		align-items: center;
+		flex-direction: column;
+
+		h1 {
+			margin-bottom: 30px;
+		}
+	}
+
+	.button{
+		margin: 0 auto;
+		margin-top: 30px;
+		width: fit-content;
+	}
+
+	input[type="submit"] {
+		height: 50px;
+		cursor: pointer;
+		font-size: 20px;
+		font-weight: 500;
+		color: #ffffff;
+		line-height: 30px;
+		padding: 10px 22px;
+		border-radius: 5px;
+		background: #ff5300;
+	}
+}
+
+form .row {
+	display: block;
+	padding: 7px 8px;
+	margin-bottom: 7px;
+}
+form .row:hover {
+	background: #f1f7fa;
+}
+
+form label {
+	display: inline-block;
+	font-size: 1.2em;
+	font-weight: bold;
+	width: 120px;
+	padding: 6px 0;
+	color: #464646;
+	vertical-align: top;
+	margin-right: 40px;
+}
+form .req {
+	color: #ca5354;
+}
+
+form .note {
+	font-size: 1.2em;
+	line-height: 1.33em;
+	font-weight: normal;
+	padding: 2px 7px;
+	margin-bottom: 10px;
+}
+
+form input:focus,
+form textarea:focus {
+	outline: none;
+}
+
+/* placeholder styles: http://stackoverflow.com/a/2610741/477958 */
+::-webkit-input-placeholder {
+	color: #aaafbd;
+	font-style: italic;
+} /* WebKit */
+:-moz-placeholder {
+	color: #aaafbd;
+	font-style: italic;
+} /* Mozilla Firefox 4 to 18 */
+::-moz-placeholder {
+	color: #aaafbd;
+	font-style: italic;
+} /* Mozilla Firefox 19+ */
+:-ms-input-placeholder {
+	color: #aaafbd;
+	font-style: italic;
+} /* Internet Explorer 10+ */
+
+form .txt {
+	display: inline-block;
+	padding: 8px 9px;
+	padding-right: 30px;
+	width: 240px;
+	font-family: "Oxygen", sans-serif;
+	font-size: 1.35em;
+	font-weight: normal;
+	color: #898989;
+}
