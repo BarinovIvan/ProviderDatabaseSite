@@ -1,13 +1,39 @@
 .applications {
 
-  &__item {
-    width: fit-content;
-    margin: 0 auto;
-  }
-  .applications__title {
-    margin: 0 auto;
-    width: fit-content;
+  .container{
+    text-align: center;
+    padding: 40px;
   }
 
+  &__title {
+    margin: 0 auto;
+    width: fit-content;
+    margin-bottom: 20px;
+  }
+
+  .application__button {
+    margin-top: 10px;
+    padding: 15px;
+    font-size: 16px;
+    border-radius: 5px ;
+  }
+
+  .application__list > * {
+    position: relative;
+    width: 1000px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px auto;
+    border-radius: 5px;
+    box-shadow: 1px 1px 10px #373737;
+
+  }
+
+  p {
+    display: inline-block;
+    margin-right: 15px;
+  }
 
 }
