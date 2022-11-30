@@ -19,13 +19,14 @@ buttonApplication.addEventListener('click', async () => {
             applicationItem = document.createElement("p");
             applicationItem.innerHTML = "| Описание заявки: " + clientApplications[i].Description;
             applicationItemWrapper.appendChild(applicationItem);
+            applicationItem = document.createElement("p");
             applicationItem.innerHTML = "| Дата создания заявки: " + clientApplications[i].CreationDate;
             applicationItemWrapper.appendChild(applicationItem);
             applicationItem = document.createElement("p");
             if (clientApplications[i].inWork == 1) {
-                let inWork = 'Да'
+                inWork = 'Да'
             } else {
-                let inWork = 'Нет';
+                inWork = 'Нет';
             }
             applicationItem.innerHTML = "| Принято в исполнение? " + inWork;
             applicationItemWrapper.appendChild(applicationItem);
@@ -79,7 +80,7 @@ buttonClients.addEventListener('click', async () => {
             clientItem.innerHTML = "ID клиента: " + clients[i].clientID;
             clientItemWrapper.appendChild(clientItem);
             clientItem = document.createElement("p");
-            clientItem.innerHTML = "| Имя и фамилия: " + clients[i].ClientName +' '+ clients[i].SecondName;
+            clientItem.innerHTML = "| Имя и фамилия: " + clients[i].ClientName + ' ' + clients[i].SecondName;
             clientItemWrapper.appendChild(clientItem);
             clientItem = document.createElement("p");
             clientItem.innerHTML = "| Телефон: " + clients[i].PhoneNumber;
@@ -113,7 +114,7 @@ buttonWorkers.addEventListener('click', async () => {
             workerItem.innerHTML = "ID работника: " + workers[i].StuffID;
             workerItemWrapper.appendChild(workerItem);
             workerItem = document.createElement("p");
-            workerItem.innerHTML = "| Имя и фамилия сотрудника: " + workers[i].StuffName +' '+ workers[i].SecondName;
+            workerItem.innerHTML = "| Имя и фамилия сотрудника: " + workers[i].StuffName + ' ' + workers[i].SecondName;
             workerItemWrapper.appendChild(workerItem);
             workerItem = document.createElement("p");
             workerItem.innerHTML = "| Телефон работника: " + workers[i].PhoneNumber;
@@ -129,13 +130,65 @@ buttonWorkers.addEventListener('click', async () => {
     } catch (error) {
         console.log(error)
     }
+});
+
+const clientInsertButton = document.querySelector('.client-insert-btn');
+const clientInsertForm = document.querySelector('.client-insert-form');
+document.querySelector('.insert-panel__client-button').addEventListener('click', () =>{
+    clientInsertForm.style.display = 'block';
+    tasksInsertForm.style.display = 'none';
+})
+let insertedClient = [];
+
+
+clientInsertButton.addEventListener('click', async function () {
+
+    insertedClient.splice(0);
+    let temp = document.querySelector('.client__name').value;
+    insertedClient.push(temp);
+    temp = document.querySelector('.client__surname').value;
+    insertedClient.push(temp);
+    temp = document.querySelector('.client__adress').value;
+    insertedClient.push(temp);
+    temp = document.querySelector('.client__number').value;
+    insertedClient.push(temp);
+    temp = document.querySelector('.client__tariff').value;
+    insertedClient.push(temp);
+
+    insertedClient = insertedClient.join(';');
+    console.log(insertedClient);
+
+    const clientInsert = await $httpForInsert('/core/functions.php', 'clients', insertedClient);
+    console.log(clientInsert);
+})
+
+const tasksInsertButton = document.querySelector('.tasks-insert-btn');
+const tasksInsertForm = document.querySelector('.tasks-insert-form');
+document.querySelector('.insert-panel__tasks-button').addEventListener('click', () =>{
+    tasksInsertForm.style.display = 'block';
+    clientInsertForm.style.display = 'none';
+})
+let insertedTask = [];
+
+tasksInsertButton.addEventListener('click', async function () {
+    insertedTask.splice(0);
+    let temp = document.querySelector('.tasks__description').value;
+    insertedTask.push(temp);
+    temp = document.querySelector('.tasks__application').value;
+    insertedTask.push(temp);
+
+    insertedTask = insertedTask.join(';');
+    console.log(insertedTask);
+
+    const tasksInsert = await $httpForInsert('/core/functions.php', 'tasks', insertedTask);
+    console.log(tasksInsert);
 })
 
 const btns = document.querySelectorAll('.btn');
 
 for (let i = 0; i < btns.length; i++) {
-    btns[i].addEventListener("click", function() {
-        if (document.getElementsByClassName("active")){
+    btns[i].addEventListener("click", function () {
+        if (document.getElementsByClassName("active")) {
             let current = document.getElementsByClassName("active");
             current[0].className = current[0].className.replace(" active", "");
         }

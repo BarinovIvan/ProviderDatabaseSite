@@ -31,7 +31,7 @@
 
 .control-panel .container {
   text-align: center;
-  padding: 40px 40px;
+  padding: 40px 40px 0;
 }
 .control-panel__title {
   width: fit-content;
@@ -144,6 +144,61 @@
 }
 .stuff p {
   text-align: center;
+}
+
+.insert-panel .container {
+  text-align: center;
+  padding: 40px 40px 0;
+}
+.insert-panel__title {
+  width: fit-content;
+  margin: 0 auto 20px;
+}
+.insert-panel__list > * {
+  position: relative;
+  width: 800px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px auto;
+  border-radius: 5px;
+  box-shadow: 1px 1px 10px #373737;
+  background: white;
+}
+.insert-panel p {
+  display: inline-block;
+  position: relative;
+  margin-right: 10px;
+}
+.insert-panel p ::after {
+  content: "";
+  width: 1px;
+  height: 100%;
+  top: 1px;
+  right: 1px;
+  background: black;
+}
+.insert-panel .btn {
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 5px;
+  margin: 0 10px;
+  background: darkgray;
+  cursor: pointer;
+}
+.insert-panel .active {
+  background: lightgray;
+}
+.insert-panel button {
+  margin-top: 30px;
+}
+.insert-panel h1 {
+  margin-bottom: 30px;
+}
+
+.tasks-insert-form {
+  display: none;
 }
 
 /*# sourceMappingURL=stuff.css.map */

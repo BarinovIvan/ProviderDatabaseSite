@@ -13,6 +13,24 @@
 		echo($sql);
 	}
 
+	if ($route_name === 'clients' and $insertedData != null){
+		$data = explode(';', $insertedData);
+		$insertQuery = "('$data[0]','$data[1]','$data[2]','$data[3]',$data[4]);";
+		$sql = "INSERT INTO clients (ClientName, SecondName, Address, PhoneNumber, Tariff) VALUES " . $insertQuery;
+		$stmt = $db->prepare($sql);
+		$stmt->execute();
+		echo($sql);
+	}
+
+	if ($route_name === 'tasks' and $insertedData != null){
+		$data = explode(';', $insertedData);
+		$insertQuery = "('$data[0]','$data[1]');";
+		$sql = "INSERT INTO tasks (Description, Application) VALUES " . $insertQuery;
+		$stmt = $db->prepare($sql);
+		$stmt->execute();
+		echo($sql);
+	}
+
 	if ($route_name === 'client_applications' and $insertedData == null) {
 		$client_applications = $db->query("SELECT * FROM client_applications", PDO::FETCH_ASSOC);
 		$arr['data'] = [];
