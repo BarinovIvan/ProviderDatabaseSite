@@ -1,33 +1,18 @@
 <?php require_once 'header.php'; ?>
         </div>
     </section>
-    <section class="applications">
+    <section class="control-panel">
         <div class="container">
-            <h1 class="applications__title">Заявки клиентов</h1>
-            <div class="application__list"></div>
-            <button class="application__button">Показать заявки клиентов</button>
+            <h1 class="control-panel__title">Действия</h1>
+            <button class="btn application__button">Показать заявки клиентов</button>
+            <button class="btn tasks__button">Показать тикеты</button>
+            <button class="btn clients__button">Показать список клиентов</button>
+            <button class="btn workers__button">Показать список сотрудников</button>
         </div>
-    </section>
-    <section class="tasks">
+    <section class="results">
         <div class="container">
-            <h1 class="tasks__title">Тикеты от провайдера</h1>
-            <div class="tasks__list"></div>
-            <button class="tasks__button">Показать тикеты</button>
-        </div>
-    </section>
-    </section><section class="clients">
-        <div class="container">
-            <h1 class="clients__title">Клиенты</h1>
-            <div class="clients__list"></div>
-            <button class="clients__button">Показать список клиентов</button>
-        </div>
-    </section>
-    </section>
-    <section class="workers">
-        <div class="container">
-            <h1 class="workers__title">Заявки клиентов</h1>
-            <div class="workers__list"></div>
-            <button class="workers__button">Показать заявки клиентов</button>
+            <h1 class="results__title">Окно просмотора</h1>
+            <div class="results__list"></div>
         </div>
     </section>
 <script src="stuff.js"></script>

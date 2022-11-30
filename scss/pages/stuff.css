@@ -1,21 +1,18 @@
-.applications .container {
+.results {
+  padding: 0 0 20px;
+}
+.results .container {
   text-align: center;
   padding: 40px;
 }
-.applications__title {
+.results__title {
   margin: 0 auto;
   width: fit-content;
   margin-bottom: 20px;
 }
-.applications .application__button {
-  margin-top: 10px;
-  padding: 15px;
-  font-size: 16px;
-  border-radius: 5px;
-}
-.applications .application__list > * {
+.results__list > * {
   position: relative;
-  width: 1000px;
+  width: 1300px;
   height: 50px;
   display: flex;
   align-items: center;
@@ -24,27 +21,23 @@
   border-radius: 5px;
   box-shadow: 1px 1px 10px #373737;
 }
-.applications p {
+.results p {
   display: inline-block;
   margin-right: 15px;
 }
+.results p:first-child {
+  font-weight: 600;
+}
 
-.tasks .container {
+.control-panel .container {
   text-align: center;
-  padding: 40px;
+  padding: 40px 40px;
 }
-.tasks__title {
-  margin: 0 auto;
+.control-panel__title {
   width: fit-content;
-  margin-bottom: 20px;
+  margin: 0 auto 20px;
 }
-.tasks__button {
-  margin-top: 10px;
-  padding: 15px;
-  font-size: 16px;
-  border-radius: 5px;
-}
-.tasks__list > * {
+.control-panel__list > * {
   position: relative;
   width: 800px;
   height: 50px;
@@ -56,18 +49,29 @@
   box-shadow: 1px 1px 10px #373737;
   background: white;
 }
-.tasks p {
+.control-panel p {
   display: inline-block;
   position: relative;
-  margin-right: 15px;
+  margin-right: 10px;
 }
-.tasks p ::after {
+.control-panel p ::after {
   content: "";
   width: 1px;
   height: 100%;
   top: 1px;
   right: 1px;
   background: black;
+}
+.control-panel .btn {
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 5px;
+  margin: 0 10px;
+  background: darkgray;
+  cursor: pointer;
+}
+.control-panel .active {
+  background: lightgray;
 }
 
 .clients .container {
@@ -102,36 +106,44 @@
   margin-right: 15px;
 }
 
-.workers .container {
-  text-align: center;
-  padding: 40px;
+.stuff {
+  padding: 120px 0;
 }
-.workers__title {
-  margin: 0 auto;
-  width: fit-content;
-  margin-bottom: 20px;
-}
-.workers__button {
-  margin-top: 10px;
-  padding: 15px;
-  font-size: 16px;
-  border-radius: 5px;
-}
-.workers__list > * {
-  position: relative;
-  width: 1340px;
-  height: 70px;
-  padding: 0 5px;
+.stuff .container {
   display: flex;
   align-items: center;
-  justify-content: center;
-  margin: 20px auto;
-  border-radius: 5px;
-  box-shadow: 1px 1px 10px #373737;
+  flex-direction: column;
 }
-.workers p {
-  display: inline-block;
-  margin-right: 15px;
+.stuff__list {
+  display: grid;
+  gap: 30px;
+  grid-template-columns: repeat(3, 1fr);
+}
+.stuff__item {
+  width: 300px;
+  display: flex;
+  padding: 25px 30px;
+  align-items: center;
+  border-radius: 10px;
+  background: #ffffff;
+  flex-direction: column;
+  justify-content: center;
+  box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.1);
+}
+.stuff img {
+  width: 240px;
+  height: 240px;
+  border-radius: 10px;
+  margin-bottom: 30px;
+}
+.stuff h3 {
+  margin-bottom: 30px;
+}
+.stuff .text {
+  margin-bottom: 15px;
+}
+.stuff p {
+  text-align: center;
 }
 
 /*# sourceMappingURL=stuff.css.map */
