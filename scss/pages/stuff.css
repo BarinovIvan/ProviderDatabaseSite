@@ -197,7 +197,7 @@
   margin-bottom: 30px;
 }
 
-.tasks-insert-form {
+.tasks-insert-form, .ip-insert-form, .stuff-insert-form {
   display: none;
 }
 

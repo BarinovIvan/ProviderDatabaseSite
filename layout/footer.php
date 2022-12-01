@@ -1,7 +1,7 @@
 <footer>
 	<div class="container">
 		<div class="footer__logo">
-			<img src="./assets/images/greeting/icon.png" alt="Логотип">
+			<img src="../assets/images/greeting/icon.png" alt="Логотип">
 		</div>
 		<div class="button"><a href="tel:+7989555664">Позвоните нам!</a></div>
         <div class="active" style="display: none"></div>

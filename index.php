@@ -1,4 +1,4 @@
-<?php require_once 'header.php'; ?>
+<?php require_once './layout/header.php'; ?>
             <div>
                 <div class="greeting">
                     <div class="greeting__text">
@@ -31,5 +31,5 @@
             </div>
         </div>
     </section>
-    <script src="clients.js"></script>
-  <?php require_once 'footer.php'; ?>
+    <script src="bin/clients.js"></script>
+  <?php require_once './layout/footer.php'; ?>

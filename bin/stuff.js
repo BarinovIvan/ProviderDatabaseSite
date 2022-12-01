@@ -1,6 +1,18 @@
 const buttonApplication = document.querySelector('.application__button');
 const resultsList = document.querySelector(".results__list");
 const resultsTitle = document.querySelector('.results__title');
+const buttonWorkers = document.querySelector('.workers__button');
+const buttonTasks = document.querySelector('.tasks__button');
+const buttonClients = document.querySelector('.clients__button');
+const clientInsertButton = document.querySelector('.client-insert-btn');
+const clientInsertForm = document.querySelector('.client-insert-form');
+const tasksInsertButton = document.querySelector('.tasks-insert-btn');
+const tasksInsertForm = document.querySelector('.tasks-insert-form');
+const ipInsertButton = document.querySelector('.ip-insert-btn');
+const ipInsertForm = document.querySelector('.ip-insert-form');
+const stuffInsertButton = document.querySelector('.stuff-insert-btn');
+const stuffInsertForm = document.querySelector('.stuff-insert-form');
+
 
 buttonApplication.addEventListener('click', async () => {
     try {
@@ -40,8 +52,6 @@ buttonApplication.addEventListener('click', async () => {
     }
 })
 
-const buttonTasks = document.querySelector('.tasks__button');
-
 buttonTasks.addEventListener('click', async () => {
     try {
         const providerTasks = await $http('/core/functions.php', 'tasks');
@@ -66,8 +76,6 @@ buttonTasks.addEventListener('click', async () => {
         console.log(error)
     }
 })
-
-const buttonClients = document.querySelector('.clients__button');
 
 buttonClients.addEventListener('click', async () => {
     try {
@@ -101,7 +109,6 @@ buttonClients.addEventListener('click', async () => {
     }
 })
 
-const buttonWorkers = document.querySelector('.workers__button');
 
 buttonWorkers.addEventListener('click', async () => {
     try {
@@ -132,15 +139,13 @@ buttonWorkers.addEventListener('click', async () => {
     }
 });
 
-const clientInsertButton = document.querySelector('.client-insert-btn');
-const clientInsertForm = document.querySelector('.client-insert-form');
-document.querySelector('.insert-panel__client-button').addEventListener('click', () =>{
+document.querySelector('.insert-panel__client-button').addEventListener('click', () => {
     clientInsertForm.style.display = 'block';
     tasksInsertForm.style.display = 'none';
+    ipInsertForm.style.display = 'none';
+    stuffInsertForm.style.display = 'none';
 })
 let insertedClient = [];
-
-
 clientInsertButton.addEventListener('click', async function () {
 
     insertedClient.splice(0);
@@ -162,14 +167,13 @@ clientInsertButton.addEventListener('click', async function () {
     console.log(clientInsert);
 })
 
-const tasksInsertButton = document.querySelector('.tasks-insert-btn');
-const tasksInsertForm = document.querySelector('.tasks-insert-form');
-document.querySelector('.insert-panel__tasks-button').addEventListener('click', () =>{
+document.querySelector('.insert-panel__tasks-button').addEventListener('click', () => {
     tasksInsertForm.style.display = 'block';
     clientInsertForm.style.display = 'none';
+    ipInsertForm.style.display = 'none';
+    stuffInsertForm.style.display = 'none';
 })
 let insertedTask = [];
-
 tasksInsertButton.addEventListener('click', async function () {
     insertedTask.splice(0);
     let temp = document.querySelector('.tasks__description').value;
@@ -184,8 +188,54 @@ tasksInsertButton.addEventListener('click', async function () {
     console.log(tasksInsert);
 })
 
-const btns = document.querySelectorAll('.btn');
+document.querySelector('.insert-panel__ip-button').addEventListener('click', () => {
+    ipInsertForm.style.display = 'block';
+    tasksInsertForm.style.display = 'none';
+    clientInsertForm.style.display = 'none';
+    stuffInsertForm.style.display = 'none';
+})
+let insertedIp = [];
+ipInsertButton.addEventListener('click', async function () {
+    insertedIp.splice(0);
+    let temp = document.querySelector('.ip__client-id').value;
+    insertedIp.push(temp);
+    temp = document.querySelector('.ip__adress').value;
+    insertedIp.push(temp);
 
+    insertedIp = insertedIp.join(';');
+    console.log(insertedIp);
+
+    const ipInsert = await $httpForInsert('/core/functions.php', 'client_ip', insertedIp);
+    console.log(ipInsert);
+})
+
+document.querySelector('.insert-panel__stuff-button').addEventListener('click', () => {
+    stuffInsertForm.style.display = 'block';
+    ipInsertForm.style.display = 'none';
+    tasksInsertForm.style.display = 'none';
+    clientInsertForm.style.display = 'none';
+})
+let insertedStuff = [];
+stuffInsertButton.addEventListener('click', async function () {
+    insertedStuff.splice(0);
+    let temp = document.querySelector('.stuff__name').value;
+    insertedStuff.push(temp);
+    temp = document.querySelector('.stuff__SecondName').value;
+    insertedStuff.push(temp);
+    temp = document.querySelector('.stuff__working-position').value;
+    insertedStuff.push(temp);
+    temp = document.querySelector('.stuff__phone-number').value;
+    insertedStuff.push(temp);
+
+    insertedStuff = insertedStuff.join(';');
+    console.log(insertedStuff);
+
+    const stuffInsert = await $httpForInsert('/core/functions.php', 'stuff', insertedStuff);
+    console.log(stuffInsert);
+})
+
+
+const btns = document.querySelectorAll('.btn');
 for (let i = 0; i < btns.length; i++) {
     btns[i].addEventListener("click", function () {
         if (document.getElementsByClassName("active")) {

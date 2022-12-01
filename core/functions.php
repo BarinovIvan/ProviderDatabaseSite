@@ -4,7 +4,25 @@
 	$route_name = $query_params['route_name'];
 	$insertedData = $query_params['insertData'];
 
-	if ($route_name === 'client_applications' and $insertedData != null){
+	if ($route_name === 'stuff' and $insertedData != null) {
+		$data = explode(';', $insertedData);
+		$insertQuery = "('$data[0]','$data[1]',$data[2],'$data[3]');";
+		$sql = "INSERT INTO stuff (StuffName, SecondName, WorkingPosition, PhoneNumber) VALUES " . $insertQuery;
+		$stmt = $db->prepare($sql);
+		$stmt->execute();
+		echo($sql);
+	}
+
+	if ($route_name === 'client_ip' and $insertedData != null) {
+		$data = explode(';', $insertedData);
+		$insertQuery = "('$data[1]',$data[0]);";
+		$sql = "INSERT INTO client_ip (IpAddress, Client) VALUES " . $insertQuery;
+		$stmt = $db->prepare($sql);
+		$stmt->execute();
+		echo($sql);
+	}
+
+	if ($route_name === 'client_applications' and $insertedData != null) {
 		$data = explode(';', $insertedData);
 		$insertQuery = "($data[0],'$data[1]','$data[2]');";
 		$sql = "INSERT INTO client_applications (Client, Description, CreationDate) VALUES " . $insertQuery;
@@ -13,7 +31,7 @@
 		echo($sql);
 	}
 
-	if ($route_name === 'clients' and $insertedData != null){
+	if ($route_name === 'clients' and $insertedData != null) {
 		$data = explode(';', $insertedData);
 		$insertQuery = "('$data[0]','$data[1]','$data[2]','$data[3]',$data[4]);";
 		$sql = "INSERT INTO clients (ClientName, SecondName, Address, PhoneNumber, Tariff) VALUES " . $insertQuery;
@@ -22,7 +40,7 @@
 		echo($sql);
 	}
 
-	if ($route_name === 'tasks' and $insertedData != null){
+	if ($route_name === 'tasks' and $insertedData != null) {
 		$data = explode(';', $insertedData);
 		$insertQuery = "('$data[0]','$data[1]');";
 		$sql = "INSERT INTO tasks (Description, Application) VALUES " . $insertQuery;

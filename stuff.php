@@ -1,4 +1,4 @@
-<?php require_once 'header.php'; ?>
+<?php require_once './layout/header.php'; ?>
     </div>
     </section>
     <section class="control-panel">
@@ -21,8 +21,8 @@
             <h1 class="insert-panel__title">Действия</h1>
             <button class="btn insert-panel__client-button active">Добавить клиента</button>
             <button class="btn insert-panel__tasks-button">Добавить тикет</button>
-            <button class="btn clients__button">!!!!!!!!!!!!</button>
-            <button class="btn workers__button">!!!!!!!!!!!!</button>
+            <button class="btn insert-panel__ip-button">Присвоить клиенту IP</button>
+            <button class="btn insert-panel__stuff-button">Добавить работника</button>
         </div>
         <div class="insert">
             <div class="container">
@@ -72,6 +72,48 @@
                         <button class="tasks-insert-btn button">Добавить тикет</button>
                     </form>
             </div>
+                <div class="ip-insert-form">
+                    <p class="subtitle" id="contact">Таблица client_ip</p>
+                    <h1>Присвоить клиенту IP-адрес</h1>
+                    <form onsubmit="return false" method="post" action="#">
+                        <div class="row">
+                            <label for="name">ID клиента<span class="req">*</span></label>
+                            <input type="text" class="ip__client-id" tabindex="1" placeholder="ID клиента" required>
+                        </div>
+                        <div class="row">
+                            <label for="name">IP адрес<span class="req">*</span></label>
+                            <input type="text" class="ip__adress" tabindex="1" placeholder="Новый IP адресс клиента"
+                                   required>
+                        </div>
+                        <button class="ip-insert-btn button">Добавить тикет</button>
+                    </form>
+                </div>
+                <div class="stuff-insert-form">
+                    <p class="subtitle" id="contact">Таблица stuff</p>
+                    <h1>Добавить работника</h1>
+                    <form onsubmit="return false" method="post" action="#">
+                        <div class="row">
+                            <label for="name">Имя работника<span class="req">*</span></label>
+                            <input type="text" class="stuff__name" tabindex="1" placeholder="Имя работника" required>
+                        </div>
+                        <div class="row">
+                            <label for="name">Фамилия работника<span class="req">*</span></label>
+                            <input type="text" class="stuff__SecondName" tabindex="1" placeholder="Фамилия работника"
+                                   required>
+                        </div>
+                        <div class="row">
+                            <label for="name">ID должности<span class="req">*</span></label>
+                            <input type="text" class="stuff__working-position" tabindex="1" placeholder="ID должности"
+                                   required>
+                        </div>
+                        <div class="row">
+                            <label for="name">Номер телефона<span class="req">*</span></label>
+                            <input type="text" class="stuff__phone-number" tabindex="1" placeholder="+79993334444"
+                                   required>
+                        </div>
+                        <button class="stuff-insert-btn button">Добавить работника</button>
+                    </form>
+                </div>
     </section>
-    <script src="stuff.js"></script>
-<?php require_once 'footer.php'; ?>
+    <script src="bin/stuff.js"></script>
+<?php require_once './layout/footer.php'; ?>
