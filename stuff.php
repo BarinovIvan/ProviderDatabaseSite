@@ -3,7 +3,7 @@
     </section>
     <section class="control-panel">
         <div class="container">
-            <h1 class="control-panel__title">Действия</h1>
+            <h1 class="control-panel__title">Просмотр таблиц</h1>
             <button class="btn application__button">Показать заявки клиентов</button>
             <button class="btn tasks__button">Показать тикеты</button>
             <button class="btn clients__button">Показать список клиентов</button>
@@ -18,7 +18,7 @@
     </section>
     <section class="insert-panel">
         <div class="container">
-            <h1 class="insert-panel__title">Действия</h1>
+            <h1 class="insert-panel__title">Поля ввода данных</h1>
             <button class="btn insert-panel__client-button active">Добавить клиента</button>
             <button class="btn insert-panel__tasks-button">Добавить тикет</button>
             <button class="btn insert-panel__ip-button">Присвоить клиенту IP</button>
