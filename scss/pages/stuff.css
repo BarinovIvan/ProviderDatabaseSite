@@ -191,7 +191,7 @@
   background: lightgray;
 }
 .insert-panel button {
-  margin-top: 30px;
+  margin: 30px 0;
 }
 .insert-panel h1 {
   margin-bottom: 30px;
@@ -199,6 +199,112 @@
 
 .tasks-insert-form, .ip-insert-form, .stuff-insert-form {
   display: none;
+}
+
+.delete-panel .container {
+  text-align: center;
+  padding: 40px 40px 0;
+}
+.delete-panel__title {
+  width: fit-content;
+  margin: 0 auto 20px;
+}
+.delete-panel__list > * {
+  position: relative;
+  width: 800px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px auto;
+  border-radius: 5px;
+  box-shadow: 1px 1px 10px #373737;
+  background: white;
+}
+.delete-panel p {
+  display: inline-block;
+  position: relative;
+  margin-right: 10px;
+}
+.delete-panel p ::after {
+  content: "";
+  width: 1px;
+  height: 100%;
+  top: 1px;
+  right: 1px;
+  background: black;
+}
+.delete-panel .btn {
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 5px;
+  margin: 0 10px;
+  background: darkgray;
+  cursor: pointer;
+}
+.delete-panel .active {
+  background: lightgray;
+}
+.delete-panel button {
+  margin: 30px 0;
+}
+.delete-panel h1 {
+  margin-bottom: 30px;
+}
+
+.tasks-delete-form, .ip-delete-form, .stuff-delete-form {
+  display: none;
+}
+
+.update-panel .container {
+  text-align: center;
+  padding: 40px 40px 0;
+}
+.update-panel__title {
+  width: fit-content;
+  margin: 0 auto 20px;
+}
+.update-panel__list > * {
+  position: relative;
+  width: 800px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px auto;
+  border-radius: 5px;
+  box-shadow: 1px 1px 10px #373737;
+  background: white;
+}
+.update-panel p {
+  display: inline-block;
+  position: relative;
+  margin-right: 10px;
+}
+.update-panel p ::after {
+  content: "";
+  width: 1px;
+  height: 100%;
+  top: 1px;
+  right: 1px;
+  background: black;
+}
+.update-panel .btn {
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 5px;
+  margin: 0 10px;
+  background: darkgray;
+  cursor: pointer;
+}
+.update-panel .active {
+  background: lightgray;
+}
+.update-panel button {
+  margin: 30px 0;
+}
+.update-panel h1 {
+  margin-bottom: 30px;
 }
 
 /*# sourceMappingURL=stuff.css.map */

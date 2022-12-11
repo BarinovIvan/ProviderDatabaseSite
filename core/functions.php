@@ -4,6 +4,8 @@
 	$route_name = $query_params['route_name'];
 	$insertedData = $query_params['insertData'];
 
+	/////////////////////////////////////////////////////////////////////////////////////////////
+
 	if ($route_name === 'stuff' and $insertedData != null) {
 		$data = explode(';', $insertedData);
 		$insertQuery = "('$data[0]','$data[1]',$data[2],'$data[3]');";
@@ -15,8 +17,13 @@
 
 	if ($route_name === 'client_ip' and $insertedData != null) {
 		$data = explode(';', $insertedData);
-		$insertQuery = "('$data[1]',$data[0]);";
-		$sql = "INSERT INTO client_ip (IpAddress, Client) VALUES " . $insertQuery;
+		if ($data[0] = 'delete') {
+			$insertQuery = "$data[1];";
+			$sql = "DELETE FROM client_ip WHERE ip_id = " . $insertQuery;
+		} else {
+			$insertQuery = "('$data[1]',$data[0]);";
+			$sql = "INSERT INTO client_ip (IpAddress, Client) VALUES " . $insertQuery;
+		}
 		$stmt = $db->prepare($sql);
 		$stmt->execute();
 		echo($sql);
@@ -33,8 +40,13 @@
 
 	if ($route_name === 'clients' and $insertedData != null) {
 		$data = explode(';', $insertedData);
-		$insertQuery = "('$data[0]','$data[1]','$data[2]','$data[3]',$data[4]);";
-		$sql = "INSERT INTO clients (ClientName, SecondName, Address, PhoneNumber, Tariff) VALUES " . $insertQuery;
+		if ($data[0] = 'delete') {
+			$insertQuery = "$data[1];";
+			$sql = "DELETE FROM clients WHERE clientID = " . $insertQuery;
+		} else {
+			$insertQuery = "('$data[0]','$data[1]','$data[2]','$data[3]',$data[4]);";
+			$sql = "INSERT INTO clients (ClientName, SecondName, Address, PhoneNumber, Tariff) VALUES " . $insertQuery;
+		}
 		$stmt = $db->prepare($sql);
 		$stmt->execute();
 		echo($sql);
@@ -42,12 +54,19 @@
 
 	if ($route_name === 'tasks' and $insertedData != null) {
 		$data = explode(';', $insertedData);
-		$insertQuery = "('$data[0]','$data[1]');";
-		$sql = "INSERT INTO tasks (Description, Application) VALUES " . $insertQuery;
+			if ($data[0] = 'update') {
+				$insertQuery = "'$data[2]'";
+				$sql = "UPDATE tasks SET Description = " . $insertQuery . " WHERE TaskID = " . $data[1] ;
+			} else {
+				$insertQuery = "('$data[0]','$data[1]');";
+				$sql = "INSERT INTO tasks (Description, Application) VALUES " . $insertQuery;
+			}
 		$stmt = $db->prepare($sql);
 		$stmt->execute();
 		echo($sql);
 	}
+
+	/////////////////////////////////////////////////////////////////////////////////////////////
 
 	if ($route_name === 'client_applications' and $insertedData == null) {
 		$client_applications = $db->query("SELECT * FROM client_applications", PDO::FETCH_ASSOC);

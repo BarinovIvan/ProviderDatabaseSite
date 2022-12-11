@@ -13,6 +13,15 @@ const ipInsertForm = document.querySelector('.ip-insert-form');
 const stuffInsertButton = document.querySelector('.stuff-insert-btn');
 const stuffInsertForm = document.querySelector('.stuff-insert-form');
 
+const clientDeleteButton = document.querySelector('.client-delete-btn');
+const clientDeleteForm = document.querySelector('.client-delete-form');
+const tasksDeleteButton = document.querySelector('.tasks-delete-btn');
+const tasksDeleteForm = document.querySelector('.tasks-delete-form');
+const ipDeleteButton = document.querySelector('.ip-delete-btn');
+const ipDeleteForm = document.querySelector('.ip-delete-form');
+const stuffDeleteButton = document.querySelector('.stuff-delete-btn');
+const stuffDeleteForm = document.querySelector('.stuff-delete-form');
+
 
 buttonApplication.addEventListener('click', async () => {
     try {
@@ -139,6 +148,8 @@ buttonWorkers.addEventListener('click', async () => {
     }
 });
 
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 document.querySelector('.insert-panel__client-button').addEventListener('click', () => {
     clientInsertForm.style.display = 'block';
     tasksInsertForm.style.display = 'none';
@@ -246,3 +257,86 @@ for (let i = 0; i < btns.length; i++) {
     });
 }
 
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+document.querySelector('.delete-panel__client-button').addEventListener('click', () => {
+    stuffDeleteForm.style.display = 'none';
+    ipDeleteForm.style.display = 'none';
+    tasksDeleteForm.style.display = 'none';
+    clientDeleteForm.style.display = 'block';
+})
+
+clientDeleteButton.addEventListener('click', async function () {
+    insertedStuff.splice(0);
+    insertedStuff = ['delete'];
+    let temp = document.querySelector('.client__id').value;
+    insertedStuff.push(temp);
+    insertedStuff = insertedStuff.join(';');
+    console.log(insertedStuff);
+
+    const stuffInsert = await $httpForInsert('/core/functions.php', 'clients', insertedStuff);
+    console.log(stuffInsert);
+})
+
+document.querySelector('.delete-panel__tasks-button').addEventListener('click', () => {
+    stuffDeleteForm.style.display = 'none';
+    ipDeleteForm.style.display = 'none';
+    tasksDeleteForm.style.display = 'block';
+    clientDeleteForm.style.display = 'none';
+})
+
+document.querySelector('.delete-panel__ip-button').addEventListener('click', () => {
+    stuffDeleteForm.style.display = 'none';
+    ipDeleteForm.style.display = 'block';
+    tasksDeleteForm.style.display = 'none';
+    clientDeleteForm.style.display = 'none';
+})
+
+ipDeleteButton.addEventListener('click', async function () {
+    insertedStuff.splice(0);
+    insertedStuff = ['delete'];
+    let temp = document.querySelector('.ip__delete-client-id').value;
+    insertedStuff.push(temp);
+    insertedStuff = insertedStuff.join(';');
+    console.log(insertedStuff);
+
+    const stuffInsert = await $httpForInsert('/core/functions.php', 'client_ip', insertedStuff);
+    console.log(stuffInsert);
+})
+
+document.querySelector('.delete-panel__stuff-button').addEventListener('click', () => {
+    stuffDeleteForm.style.display = 'block';
+    ipDeleteForm.style.display = 'none';
+    tasksDeleteForm.style.display = 'none';
+    clientDeleteForm.style.display = 'none';
+})
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+// const clientUpdateCheckbox = document.querySelector('.client__new-name-checkbox');
+const taskUpdateButton = document.querySelector('.task-update-btn');
+
+
+// taskUpdateCheckbox.addEventListener('click', function handleClick() {
+//     if (taskUpdateCheckbox.checked) {
+//         taskUpdateNewName.style.display = 'inline';
+//     } else {
+//         taskUpdateNewName.style.display = 'none';
+//     }
+// });
+
+taskUpdateButton.addEventListener('click', async function(){
+    insertedStuff.splice(0);
+    insertedStuff = ['update'];
+    let temp = document.querySelector('.task__new-id').value;
+    insertedStuff.push(temp);
+    temp = document.querySelector('.task__new-description').value;
+    insertedStuff.push(temp);
+    insertedStuff = insertedStuff.join(';');
+    console.log(insertedStuff);
+
+    const stuffInsert = await $httpForInsert('/core/functions.php', 'tasks', insertedStuff);
+    console.log(stuffInsert);
+
+})

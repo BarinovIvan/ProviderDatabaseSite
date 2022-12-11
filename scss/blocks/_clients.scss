@@ -1,0 +1,40 @@
+.clients {
+
+  .container{
+    text-align: center;
+    padding: 40px;
+  }
+
+  &__title {
+    margin: 0 auto;
+    width: fit-content;
+    margin-bottom: 20px;
+  }
+
+  &__button {
+    margin-top: 10px;
+    padding: 15px;
+    font-size: 16px;
+    border-radius: 5px ;
+  }
+
+  &__list > * {
+    position: relative;
+    width: 1340px;
+    height: 70px;
+    padding: 0 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px auto;
+    border-radius: 5px;
+    box-shadow: 1px 1px 10px #373737;
+
+  }
+
+  p {
+    display: inline-block;
+    margin-right: 15px;
+  }
+
+}

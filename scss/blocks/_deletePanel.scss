@@ -1,0 +1,66 @@
+.delete-panel {
+
+  .container{
+    text-align: center;
+    padding: 40px 40px 0;
+  }
+
+  &__title {
+    width: fit-content;
+    margin: 0 auto 20px;
+  }
+
+  &__list > * {
+    position: relative;
+    width: 800px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px auto;
+    border-radius: 5px;
+    box-shadow: 1px 1px 10px #373737;
+    background: white;
+
+  }
+
+  p {
+    display: inline-block;
+    position: relative;
+    margin-right: 10px;
+    ::after{
+      content: '';
+      width: 1px;
+      height: 100%;
+      top: 1px;
+      right: 1px;
+      background: black;
+    }
+  }
+
+  .btn {
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px ;
+    margin: 0 10px;
+    background: darkgray;
+    cursor: pointer;
+  }
+
+  .active{
+    background: lightgray;
+  }
+
+  button{
+    margin: 30px 0;
+  }
+
+  h1{
+    margin-bottom: 30px;
+  }
+
+}
+
+.tasks-delete-form, .ip-delete-form, .stuff-delete-form{
+  display: none;
+}

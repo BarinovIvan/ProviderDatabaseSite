@@ -1,0 +1,342 @@
+* {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+}
+* a {
+  color: inherit;
+}
+* button {
+  border: 0;
+}
+
+/* ======================================================================= */
+.container {
+  width: 1440px;
+  padding: 10px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+main {
+  color: #373737;
+  font-family: sans-serif;
+}
+
+section:nth-child(odd) {
+  background-color: #fff7f4;
+}
+
+/* =======COMMON================================================================ */
+.text {
+  font-size: 16px;
+  color: #7b7b7b;
+  font-weight: 400;
+  line-height: 24px;
+}
+
+.title {
+  font-weight: 600;
+  line-height: 59px;
+  width: fit-content;
+  margin-bottom: 30px;
+  font-size: 39.0625px;
+}
+
+.subtitle {
+  font-size: 16px;
+  color: #ff5300;
+  font-weight: 400;
+  line-height: 24px;
+  position: relative;
+  width: fit-content;
+  margin-bottom: 8px;
+}
+.subtitle::before, .subtitle::after {
+  content: "";
+  top: 18px;
+  height: 1px;
+  width: 40px;
+  position: absolute;
+  background-color: #ff5300;
+}
+.subtitle::before {
+  left: -50px;
+}
+.subtitle::after {
+  right: -50px;
+}
+
+button {
+  gap: 10px;
+  height: 50px;
+  cursor: pointer;
+  font-size: 20px;
+  font-weight: 500;
+  color: #ffffff;
+  line-height: 30px;
+  padding: 10px 22px;
+  border-radius: 5px;
+  background: #ff5300;
+}
+
+.header {
+  padding: 30px 0;
+  background-color: #fff7f4;
+}
+.header__logo {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+.header > div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.header > div h1 {
+  line-height: 46px;
+  font-size: 39.06px;
+}
+.header > div img {
+  width: 100px;
+}
+.header > div nav {
+  align-items: center;
+}
+.header > div nav a {
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 30px;
+}
+.header > div nav > *:not(:last-child) {
+  margin-right: 30px;
+}
+
+.greeting {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 150px;
+}
+.greeting__text {
+  margin-right: 35px;
+}
+.greeting__text h2 {
+  font-weight: 700;
+  line-height: 73px;
+  font-size: 48.83px;
+  margin-bottom: 18px;
+}
+.greeting .text {
+  margin-bottom: 30px;
+}
+
+.about {
+  padding: 120px 0;
+}
+.about .container {
+  display: flex;
+  justify-content: space-between;
+}
+.about .container img {
+  width: 620px;
+  height: 380px;
+  margin: auto 0;
+}
+.about .title {
+  font-size: 30px;
+}
+.about__text {
+  width: 720px;
+  margin-left: 15px;
+}
+.about ul {
+  list-style-type: none;
+}
+.about ul li {
+  position: relative;
+  font-size: 20px;
+  font-weight: 400;
+  padding: 0 38px 0;
+  line-height: 24px;
+  margin-bottom: 15px;
+}
+.about ul li:before {
+  position: absolute;
+  top: 0;
+  left: -5px;
+  content: url(../../assets/images/about/checkbox-circle-fill.png);
+}
+.about .text {
+  margin-bottom: 30px;
+}
+.about .subtitle:before {
+  display: none;
+}
+
+.stuff {
+  padding: 120px 0;
+}
+.stuff .container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.stuff__list {
+  display: grid;
+  gap: 30px;
+  grid-template-columns: repeat(3, 1fr);
+}
+.stuff__item {
+  width: 300px;
+  display: flex;
+  padding: 25px 30px;
+  align-items: center;
+  border-radius: 10px;
+  background: #ffffff;
+  flex-direction: column;
+  justify-content: center;
+  box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.1);
+}
+.stuff img {
+  width: 240px;
+  height: 240px;
+  border-radius: 10px;
+  margin-bottom: 30px;
+}
+.stuff h3 {
+  margin-bottom: 30px;
+}
+.stuff .text {
+  margin-bottom: 15px;
+}
+.stuff p {
+  text-align: center;
+}
+
+.contact-us {
+  padding: 30px 0;
+}
+.contact-us .container > div {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.contact-us .container > div h1 {
+  margin-bottom: 30px;
+}
+.contact-us .button {
+  width: 346px;
+  margin: 30px auto 0;
+}
+
+form .row {
+  display: block;
+  padding: 7px 8px;
+  margin-bottom: 7px;
+}
+
+form .row:hover {
+  background: #f1f7fa;
+}
+
+form label {
+  display: inline-block;
+  font-size: 1.2em;
+  font-weight: bold;
+  width: 120px;
+  padding: 6px 0;
+  color: #464646;
+  vertical-align: top;
+  margin-right: 40px;
+}
+
+form .req {
+  color: #ca5354;
+}
+
+form .note {
+  font-size: 1.2em;
+  line-height: 1.33em;
+  font-weight: normal;
+  padding: 2px 7px;
+  margin-bottom: 10px;
+}
+
+form button:focus,
+form textarea:focus {
+  outline: none;
+}
+
+/* placeholder styles: http://stackoverflow.com/a/2610741/477958 */
+::-webkit-button-placeholder {
+  color: #aaafbd;
+  font-style: italic;
+}
+
+/* WebKit */
+:-moz-placeholder {
+  color: #aaafbd;
+  font-style: italic;
+}
+
+/* Mozilla Firefox 4 to 18 */
+::-moz-placeholder {
+  color: #aaafbd;
+  font-style: italic;
+}
+
+/* Mozilla Firefox 19+ */
+:-ms-button-placeholder {
+  color: #aaafbd;
+  font-style: italic;
+}
+
+/* Internet Explorer 10+ */
+form .txt {
+  display: inline-block;
+  padding: 8px 9px;
+  padding-right: 30px;
+  width: 240px;
+  font-family: "Oxygen", sans-serif;
+  font-size: 1.35em;
+  font-weight: normal;
+  color: #898989;
+}
+
+textarea {
+  height: 50px;
+}
+
+input {
+  height: 50px;
+}
+
+footer {
+  background-color: #fff7f4;
+}
+footer .button {
+  margin-top: 30px;
+  width: fit-content;
+}
+footer a {
+  height: 50px;
+  cursor: pointer;
+  font-size: 20px;
+  font-weight: 500;
+  color: #ffffff;
+  line-height: 30px;
+  padding: 10px 22px;
+  border-radius: 5px;
+  background: #ff5300;
+}
+footer .container {
+  display: flex;
+  justify-content: space-between;
+}
+footer .footer__logo img {
+  width: 100px;
+}
+
+/*# sourceMappingURL=style.css.map */
